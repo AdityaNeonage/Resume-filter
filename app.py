@@ -1,12 +1,9 @@
-from config import API_KEY
-from google import genai
+from config import DEFAULT_CHAT_MODEL
+from ollama_client import generate_text
 
-client = genai.Client(api_key=API_KEY)
-
-response = client.models.generate_content(
-    model="gemini-3.5-flash",
-    contents="Write a short story about a robot learning to love.",
+response = generate_text(
+    "Write a short story about a robot learning to love.",
+    model=DEFAULT_CHAT_MODEL,
 )
 
-print(response.text)
-client.close()
+print(response)

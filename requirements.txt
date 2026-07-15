@@ -1,2 +1,5 @@
 python-dotenv
-google-genai
+requests
+streamlit
+python-docx
+reportlab
